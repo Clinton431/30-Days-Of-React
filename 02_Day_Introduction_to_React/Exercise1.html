@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      /* == General style === */
+      * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+      }
+
+      html,
+      body {
+        height: 100%;
+        line-height: 1.5;
+        font-family: 'Montserrat';
+        font-weight: 300;
+        color: black;
+      }
+
+      .root {
+        min-height: 100%;
+        position: relative;
+      }
+
+      .header-wrapper,
+      .main-wrapper,
+      .footer-wrapper {
+        width: 85%;
+        margin: auto;
+      }
+
+      .header-wrapper,
+      .main-wrapper {
+        padding: 10px;
+        margin: 2px auto;
+      }
+
+      h1 {
+        font-size: 70px;
+        font-weight: 300;
+      }
+
+      h2,
+      h3 {
+        font-weight: 300;
+      }
+
+      header {
+        background-color: #61dbfb;
+        padding: 10px;
+      }
+
+      main {
+        padding: 10px;
+        padding-bottom: 60px;
+        /* Height of the footer */
+      }
+
+      ul {
+        margin-left: 15px;
+      }
+
+      ul li {
+        list-style: none;
+      }
+
+      footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 60px;
+        /* Height of the footer */
+        background: #6cf;
+      }
+
+      .footer-wrapper {
+        font-weight: 400;
+        text-align: center;
+        line-height: 60px;
+      }
+    </style>
+  </head>
+<body>
+    
+    <!-- JSX Element:
+A JSX element is a syntax extension for JavaScript that looks similar to XML or HTML. It is commonly used in React to describe the structure of UI components.
+
+Storing Name in a Variable: -->
+    <div class="root"></div>
+
+    <script
+      crossorigin
+      src="https://unpkg.com/react@16/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+      // To get the root element from the HTML document
+    const rootElement = document.querySelector('.root')
+    const name = <h1>Clinton Nyakoe</h1>;
+
+    const numOne = 2
+    const numTwo = 4
+    const result = (
+        <p>
+            {numOne} + {numTwo} = {numOne + numTwo}
+        </p>
+    )
+
+    const yearBorn = 2002
+    const currentYear = 2024
+    const age = currentYear - yearBorn
+    const personAge = (
+        <p>
+            {' '}
+            {name} {age}
+        </p>
+    )
+
+    const techies = ['HTML', 'CSS', 'JavaScript']
+    const techiesFornmatted = techies.map((tech) => <li key={tech}>{tech}</li>)
+
+    const user = (
+        <div>
+            <h1>Name: Clinton Nyakoe</h1>
+            <p>Country:  Kenya</p>
+            <p>Title: Software Engineer</p>
+            <p>Gender: Male</p>
+            <p>Email: nyakoe10@gmail.com</p>
+            <p>Phone Number: 011112312</p>
+        </div>
+    );
+
+const footer = (
+  <footer>
+    <p>Copyright © 2024. All rights reserved.</p>
+    {/* Add additional footer information as needed */}
+  </footer>
+);
+
+ReactDOM.render(app, rootElement)
+</script>
+</div>
+</body>
+</html>
