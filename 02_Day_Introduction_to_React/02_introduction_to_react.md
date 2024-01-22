@@ -183,7 +183,7 @@ We comment codes for different reasons and it is also good to know how to commen
 
 #### Rendering a JSX Element
 
-To render a JSX element to HTML document, we should first create an index HTML. The index.html is the only HTML file you will have in any React Application. That is why we say that every React Application is a single page application. Let us create an index.html file. We can get started with React in two ways - either by using CDN or create-react-app. The create-react-app creates a React project boilerplate outbox and because of that, many people do have a hard time to understand how React works. In order to make things clear for absolute beginners I would like to start with a CDN. We use CDN only in this section and we will use the create-reap-app in the rest of the challenge and I also recommend you to use only create-react-app all the time.
+To render a JSX element to HTML document, we should first create an index HTML. The index.html is the only HTML file you will have in any React Application. That is why we say that every React Application is a single page application. Let us create an index.html file. We can get started with React in two ways - either by using CDN or create-react-app. The create-react-app creates a React project boilerplate outbox and because of that, many people do have a hard time to understand how React works. In order to make things clear for absolute beginners I would like to start with a CDN. We use CDN only in this section and we will use the create-react-app in the rest of the challenge and I also recommend you to use only create-react-app all the time.
 
 ```html
 <!DOCTYPE html>
@@ -334,6 +334,16 @@ Let us render more content. To render more content, the JSX element should have 
         </header>
       )
 
+      // const header = (
+      //   <header>
+      //     <h1>welcome to 30 days of React</h1>
+      //     <h2>Getting started React</h2>
+      //     <h3>Javascript Library</h3>
+      //     <p>Clinton Nyakoe</p>
+      //     <small>Jan 16, 2024</small>
+      //   </header>
+      // )
+
       // we render the JSX element using the ReactDOM package
       // ReactDOM has the render method and the render method takes two arguments
       ReactDOM.render(header, rootElement)
@@ -361,6 +371,18 @@ const main = (
   </main>
 )
 ```
+```js
+// const main = (
+//   <main>
+//     <p>Prerequisites to get started react.js</p>
+//     <ul>
+//       <li>HTML</li>
+//       <li>CSS</li>
+//       <li>Javascript</li>
+//     </ul>
+//   </main>
+// )
+```
 
 JSX element for the footer part of the website.
 
@@ -371,6 +393,13 @@ const footer = (
     <p>Copyright 2020</p>
   </footer>
 )
+```
+```js
+// const footer = (
+//   <footer>
+//     <p>Copyright 2020</p>
+//   </footer>
+// )
 ```
 
 Now, we have three JSX elements: the header, main and footer. The best way to render all of the three JSX elements is by wrapping them all in a parent JSX element or putting them in an array. To include JSX element inside another JSX element we use the curly bracket, {} and call the name of the JSX inside the curly bracket.
@@ -414,6 +443,16 @@ const app = (
     {footer}
   </div>
 )
+```
+
+<!-- ```js
+const App = (
+  <div>
+    {header}
+    {main}
+    {footer}
+  </div>  
+) -->
 ```
 
 Now, let us put everything together and render it to the browser. [Live on code pen](https://codepen.io/Asabeneh/full/MWwbYWg).
@@ -491,7 +530,7 @@ Now, let us put everything together and render it to the browser. [Live on code 
   </body>
 </html>
 ```
-
+<!-- Tuesday 16 jan ------------------------------------------------------------------------------------------------------------------------------->
 ![Rendering Multiple JSX Elements](../images/rendering_multiple_jsx_elements.png)
 
 Let us apply some style to our JSX elements and see the result.
@@ -533,6 +572,21 @@ const header = (
   </header>
 )
 ```
+<!-- ```js
+const style = { border: '2px solid orange', color: 'black', fontSize: '18px'}
+const header = (
+  <header style={style}>
+    <h1>Welcome to 30 days of React</h1>
+    <h2>Getting started React</h2>
+    <h3>Javascript Library</h3>
+    <p>Clinton Nyakoe</p>
+    <small>Jan 22, 2024</small>
+  </header>
+) -->
+```
+
+
+
 
 It is good practice to open the browser console while you are developing your application to know, if everything goes well.
 
@@ -830,6 +884,13 @@ const authorFirstName = 'Asabeneh'
 const authorLastName = 'Yetayeh'
 const date = 'Oct 1, 2020'
 
+// const welcome = "Welcome to 30 Days of React"
+// const title = "Getting started React"
+// const subtitle = "Javascript Library"
+// const authorFirstName = "Clinton"
+// const authorLastName = "Nyakoe"
+// const date = "Jan 22, 2024"
+
 // JSX element, header
 const header = (
   <header>
@@ -853,12 +914,19 @@ Similar to the header JSX element, we can implement data injection to main and f
 In this section we inject only strings
 
 ```js
-const welcome = 'Welcome to 30 Days Of React'
-const title = 'Getting Started React'
-const subtitle = 'JavaScript Library'
-const firstName = 'Asabeneh'
-const lastName = 'Yetayeh'
-const date = 'Oct 2, 2020'
+// const welcome = 'Welcome to 30 Days Of React'
+// const title = 'Getting Started React'
+// const subtitle = 'JavaScript Library'
+// const firstName = 'Asabeneh'
+// const lastName = 'Yetayeh'
+// const date = 'Oct 2, 2020'
+
+const welcome = "Welcome to 30 Days of REACT"
+const title = "Getting Started React"
+const subtitle = "Javascript Library"
+const firstName = "Clinton"
+const lastName = "Nyakoe"
+const date = "Jan 22 2024"
 
 // JSX element, header
 
@@ -883,17 +951,24 @@ const header = (
 ```js
 const numOne = 3
 const numTwo = 2
+const numThree = 4
+const numFour = 5
 
 const result = (
   <p>
-    {numOne} + {numTwo} = {numOne + numTwo}
+    {numOne} + {numTwo} + {numThree} + {numFour}= {numOne + numTwo + numThree + numFour}
   </p>
 )
 
-const yearBorn = 1820
+// const yearBorn = 1820
+// const currentYear = new Date().getFullYear()
+// const age = currentYear - yearBorn
+// const personAge = <p> {age}</p>
+
+const yearBorn = 2002
 const currentYear = new Date().getFullYear()
 const age = currentYear - yearBorn
-const personAge = <p> {age}</p>
+const personAge = <p> {age} </p>
 ```
 
 As you can see in the example above, it is possible to do some arithmetic calculations and ternary operations.
@@ -1036,14 +1111,23 @@ Now, let us put everything together. Here, in the example below, the data is inj
       // To get the root element from the HTML document
       const rootElement = document.querySelector('.root')
       // JSX element, header
+      // const welcome = 'Welcome to 30 Days Of React'
+      // const title = 'Getting Started React'
+      // const subtitle = 'JavaScript Library'
+      // const author = {
+      //   firstName: 'Asabeneh',
+      //   lastName: 'Yetayeh',
+      // }
+      // const date = 'Oct 2, 2020'
+
       const welcome = 'Welcome to 30 Days Of React'
       const title = 'Getting Started React'
       const subtitle = 'JavaScript Library'
       const author = {
-        firstName: 'Asabeneh',
-        lastName: 'Yetayeh',
+        firstName: 'Clinton',
+        lastName: 'Nyakoe'
       }
-      const date = 'Oct 2, 2020'
+      const date = 'Jan 22 2024'
 
       // JSX element, header
       const header = (
@@ -1054,6 +1138,7 @@ Now, let us put everything together. Here, in the example below, the data is inj
             <h3>{subtitle}</h3>
             <p>
               Instructor: {author.firstName} {author.lastName}
+              Student: {author.firstName} {author.lastName}
             </p>
             <small>Date: {date}</small>
           </div>
@@ -1062,14 +1147,16 @@ Now, let us put everything together. Here, in the example below, the data is inj
 
       const numOne = 3
       const numTwo = 2
+      const numThree = 4
+      const numFour = 1
 
       const result = (
         <p>
-          {numOne} + {numTwo} = {numOne + numTwo}
+          {numOne} + {numTwo} + {numThree} + {numFour}= {numOne + numTwo + numThree + numFour}
         </p>
       )
 
-      const yearBorn = 1820
+      const yearBorn = 2002
       const currentYear = new Date().getFullYear()
       const age = currentYear - yearBorn
       const personAge = (
@@ -1291,6 +1378,7 @@ In the following code example, the list is now containing list elements and it i
 
       // JSX element, main
       const techs = ['HTML', 'CSS', 'JavaScript']
+      // const techsFormatted = techs.map((tech) => <li>{tech}</li>)
       const techsFormatted = techs.map((tech) => <li>{tech}</li>)
 
       // JSX element, main
@@ -1497,6 +1585,7 @@ As you can see above, now the lists are formatted properly, but there is a warni
 
       // JSX element, main
       const techs = ['HTML', 'CSS', 'JavaScript']
+      // const techsFormatted = techs.map((tech) => <li key={tech}>{tech}</li>)
       const techsFormatted = techs.map((tech) => <li key={tech}>{tech}</li>)
 
       // JSX element, main
