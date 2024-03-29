@@ -34,17 +34,30 @@ const HexaColor = () => {
 }
 
 // Header Component
-const Header = () => (
+// const Header = () => (
+//   <header>
+//     <div className='header-wrapper'>
+//       <h1>Welcome to 30 Days Of React</h1>
+//       <h2>Getting Started React</h2>
+//       <h3>JavaScript Library</h3>
+//       <p>Asabeneh Yetayeh</p>
+//       <small>Oct 3, 2020</small>
+//     </div>
+//   </header>
+// )
+
+
+const Header = () => {
   <header>
     <div className='header-wrapper'>
-      <h1>Welcome to 30 Days Of React</h1>
-      <h2>Getting Started React</h2>
-      <h3>JavaScript Library</h3>
-      <p>Asabeneh Yetayeh</p>
-      <small>Oct 3, 2020</small>
+      <h1>Clinton, Welcome to 30 days of React</h1>
+      <h2>Getting started React</h2>
+      <h3>Javascript Library</h3>
+      <p>Clinton Nyakoe</p>
+      <small>Mac 9, 2024</small>
     </div>
   </header>
-)
+}
 
 // User Card Component
 const UserCard = () => (

@@ -59,6 +59,7 @@ const getUserInfo = (firstName, lastName, country) => {
 // calling a functons
 
 getUserInfo('Asabeneh', 'Yeteyeh', 'Finland')
+getuserInfo('Clinton', 'Nyakoe', 'Kenya')
 
 //component syntax
 
@@ -74,8 +75,21 @@ const User = (props) => {
     </div>
   )
 }
+
+const User = (props) => {
+  return (
+    <div>
+      <h1>
+        {props.firstName}
+        {props.lastName}
+      </h1>
+    </div>
+  )
+
+}
 // calling or instantiating a component, this component has three properties and we call them props:firstName, lastName, country
 <User firstName = 'Asabeneh', lastName='Yetayeh' country = 'Finland' />
+<User firstName = 'Clinton', 'lastName="Nyakoe" country = "Kenya"/>
 ```
 
 In the previous section, we injected data as follows and today we will change these data to props.
@@ -90,6 +104,18 @@ const author = {
 }
 const date = 'Oct 4, 2020'
 
+
+
+const welcome = "Welcome to 30 days of React"
+const title = "Getting started React"
+const subtitle = "Javascript Library"
+const learner = {
+  firstName: 'Clinton',
+  lastName: 'Nyakoe',
+}
+const date = 'Feb 8, 2024'
+
+
 // Header Component
 const Header = () => (
   <header>
@@ -98,7 +124,7 @@ const Header = () => (
       <h2>{title}</h2>
       <h3>{subtitle}</h3>
       <p>
-        {author.firstName} {author.lastName}
+        {learer.firstName} {learner.lastName}
       </p>
       <small>{date}</small>
     </div>

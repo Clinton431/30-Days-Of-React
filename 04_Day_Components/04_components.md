@@ -456,7 +456,7 @@ const buttonStyles = {
   borderRadius: 5,
 }
 const Button = () => <button style={buttonStyles}> action </button>
-```
+``
 
 The Button component is a dumb component, because it does not take any parameters and we cannot change the action text dynamically. We need to pass props to the button, to change the value dynamically. We will see props in the next section. Before we close today's lesson let's make another, more functional component, which displays a random hexadecimal number.
 

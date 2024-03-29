@@ -1463,6 +1463,7 @@ As you can see above, now the lists are formatted properly, but there is a warni
       .root {
         min-height: 100%;
         position: relative;
+        font:'sans'
       }
 
       .header-wrapper,
