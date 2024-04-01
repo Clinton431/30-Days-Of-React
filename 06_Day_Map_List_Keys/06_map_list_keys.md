@@ -47,7 +47,8 @@ const App = () => {
     <div className='container'>
       <div>
         <h1>Numbers List</h1>
-        {[1, 2, 3, 4, 5]}
+        // {[1, 2, 3, 4, 5]}
+        {[1, 2, 3, 4, 5, 6]}
       </div>
     </div>
   )
@@ -116,7 +117,7 @@ const Skill = ({ skill: [tech, level] }) => (
 
 // Skills Component
 const Skills = ({ skills }) => {
-  const skillsList = skills.map((skill) => <Skill skill={skill} />)
+  const skillsList = skills.map((skill) => <Skill skill={skill} />)        //double () bracket and an arrow function from them.
   console.log(skillsList)
   return <ul>{skillsList}</ul>
 }
@@ -164,7 +165,7 @@ const Country = ({ country: { name, city } }) => {
 
 // countries component
 const Countries = ({ countries }) => {
-  const countryList = countries.map((country) => <Country country={country} />)
+  const countryList = countries.map((country) => <Country country={country} />)  //displaying one at a time.
   return <div>{countryList}</div>
 }
 // App component
@@ -191,7 +192,8 @@ import ReactDOM from 'react-dom'
 
 const Numbers = ({ numbers }) => {
   // modifying array to array of li JSX
-  const list = numbers.map((num) => <li key={num}>{num}</li>)
+  const list = numbers.map((num) => 
+  <li key={num}>{num}</li>)             //create a single list like structure using the li tag and a key inside.
   return list
 }
 
@@ -265,7 +267,7 @@ ReactDOM.render(<App />, rootElement)
 1. Why you need to map an array ?
 2. Why we need keys during mapping an array ?
 3. What is the importance of destructuring your code ?
-4. Does destructuring make your code clean and easy to read ?
+4. Does destructuring make your code clean and easy to read ? Both clean and easy to read.
 
 ## Exercises: Level 2
 
