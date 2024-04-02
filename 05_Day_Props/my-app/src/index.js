@@ -1,5 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import { Bar } from 'react-chartjs-2';
 // import asabenehImage from './images/asabeneh.jpg'
 
 // Fuction to show month date year
@@ -150,5 +151,83 @@ const App = () => {
     </div>
   )
 }
+
+
+
+
+
+
+
+
+
+
+
+
+// import React from 'react';
+ // Assuming you're using react-chartjs-2 for charting
+
+ export const tenHighestPopulation = [
+  { country: 'World', population: 7693165599 },
+  { country: 'China', population: 1377422166 },
+  { country: 'India', population: 1295210000 },
+  { country: 'United States of America', population: 323947000 },
+  { country: 'Indonesia', population: 258705000 },
+  { country: 'Brazil', population: 206135893 },
+  { country: 'Pakistan', population: 194125062 },
+  { country: 'Nigeria', population: 186988000 },
+  { country: 'Bangladesh', population: 161006790 },
+  { country: 'Russian Federation', population: 146599183 },
+  { country: 'Japan', population: 126960000 },
+]
+
+class PopulationChart extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      populationData: props.data || tenHighestPopulation, // Use props or default data
+    };
+  }
+
+  render() {
+    const { populationData } = this.state; // Destructure for conciseness
+
+    const chartData = {
+      labels: populationData.map(country => country.country),
+      datasets: [
+        {
+          label: 'Population (Billions)',
+          data: populationData.map(country => Math.round(country.population / 1000000000)), // Convert to billions
+          backgroundColor: 'rgba(255, 99, 132, 0.2)',
+          borderColor: 'rgba(255, 99, 132, 1)',
+          borderWidth: 1,
+        },
+      ],
+    };
+
+    const chartOptions = {
+      scales: {
+        yAxes: [
+          {
+            ticks: {
+              beginAtZero: true,
+            },
+          },
+        ],
+      },
+    };
+
+    return (
+      <div>
+        <h2>Top 10 Most Populous Countries</h2>
+        <Bar data={chartData} options={chartOptions} />
+      </div>
+    );
+  }
+}
+
+
+
+
+
 const rootElement = document.getElementById('root')
 ReactDOM.render(<App />, rootElement)
